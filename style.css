@@ -1,0 +1,49 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #f7f7f7;
+}
+
+.barraDeEstado{
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon{
+    height: 36px;
+    width: 36px;
+}
+
+.puntosObtenidosPorJugador{
+    display: flex;
+    align-items: center;
+    padding:15px;
+}
+
+.game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opciones{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.opciones button{
+    margin:1em;
+    background-color: darkslateblue;
+    color: antiquewhite;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+
+/* hover? */
+
+
+

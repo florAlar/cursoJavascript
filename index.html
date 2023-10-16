@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>- Practicas -</title>
+    <title>triviaGame</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script src="script.js"></script>
+
+    <div class="display">
+        <section class="">
+            <div class="barraDeEstado">
+                <div class="datosJugador">
+                    <h2 id="nombreJugador">Jugador</h2>
+                    <h3 id="nivelJugador">Nivel</h3>
+                </div>
+
+                <div class="puntosObtenidosPorJugador">
+                    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/5219/5219427.png" alt="">
+                    <h3>Puntos obtenidos: </h3>
+
+                </div>
+                <div class="puntosRestantesSiguienteNivel">aca va la resta de los puntos de lvl - puntos de jugador
+                </div>
+        </section>
+    </div>
+    <section class="game">
+        <div class="contenedor">
+
+            <div class="pregunta">
+                <h1 id="muestraPregunta">¿Ésta es mi pregunta?</h1>
+
+            </div>
+
+            <div class="opciones" id="muestraOpciones"> estas son mis opciones
+            </div>
+
+        </div>
+    </section>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="ejecutarNivel.js"></script>
 </body>
+
 </html>
