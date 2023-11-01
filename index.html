@@ -1,58 +1,101 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>triviaGame</title>
+    <title>Document</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Fondo Animado -->
 
-    <div class="display">
-        <section class="">
-            <div class="barraDeEstado">
-                <div class="datosJugador">
-                    <h2 id="nombreJugador">Jugador</h2>
-                    <h3 id="nivelJugador">Nivel</h3>
-                </div>
-
-                <div class="puntosObtenidosPorJugador">
-                    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/5219/5219427.png" alt="">
-                    <h3>Puntos obtenidos: </h3>
-
-                </div>
-                <div class="puntosRestantesSiguienteNivel">aca va la resta de los puntos de lvl - puntos de jugador
-                </div>
-        </section>
-    </div>
-    <section class="game">
-        <div class="contenedor">
-
-            <div class="pregunta">
-                <h1 id="muestraPregunta">¿Ésta es mi pregunta?</h1>
-
-            </div>
-
-            <div class="opciones" id="muestraOpciones"> estas son mis opciones
-            </div>
+    <div class="background">
+        <div class="burbujas">
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:24"></span>
+            <span style="--i:10"></span>
+            <span style="--i:14"></span>
+            <span style="--i:23"></span>
+            <span style="--i:18"></span>
+            <span style="--i:16"></span>
+            <span style="--i:19"></span>
+            <span style="--i:20"></span>
+            <span style="--i:22"></span>
+            <span style="--i:25"></span>
+            <span style="--i:18"></span>
+            <span style="--i:21"></span>
+            <span style="--i:15"></span>
+            <span style="--i:13"></span>
+            <span style="--i:26"></span>
+            <span style="--i:17"></span>
+            <span style="--i:13"></span>
+            <span style="--i:28"></span>
+            <span style="--i:26"></span>
 
         </div>
-    </section>
+        </section>
 
+
+        <!-- Pantalla de bienvenida -->
+        <section class="pantallaDeBienvenida" id="pantallaDeBienvenida">
+            <div class="pantallaDeBienvenida2">
+                <img class="logoBienvenida" src="assets/img/logoBienvenida.png" alt="">
+                <div>
+                    <label class="label"> Ingrese Su nombre </label>
+                    <input type="text" name="nombreJugador" id="nombreIngresadoJugador">
+                    <div class="btn blanco" id="comenzarJuego" onclick=" capturarNombreJugador(); comenzarJuego(); ">
+                        Comenzar a
+                        Jugar</div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- pantalla de juego -->
+        <section class="pantallaJuego" id="pantallaJuego">
+
+            <section class="barraDeEstado">
+                <div>
+                    <h3 class="nombreJugador" id="nombreJugador">Nombre de jugador</h3>
+                </div>
+                <div>
+                    <h3> Categoria </h3>
+                </div>
+                <div class="puntosObtenidos">
+                    <img src="assets/img/rec.png" alt="icono estrella">
+                    <h3 id="puntosObtenidos">0</h3>
+                </div>
+            </section>
+
+            <section class="game">
+                <div class="contenedor">
+                    <div class="enunciadoPregunta">
+                        <h2 id="pregunta">¿Cual será la pregunta que va a realizar mi juego?</h2>
+                    </div>
+                    <div class="enunciadoRespuestas">
+                        <div class="btn" id="opcion0" onclick="chequearRespuesta(0)">Opción 1</div>
+                        <div class="btn" id="opcion1" onclick="chequearRespuesta(1)">Opción 2</div>
+                        <div class="btn" id="opcion2" onclick="chequearRespuesta(2)">Opción 3</div>
+                        <div class="btn" id="opcion3" onclick="chequearRespuesta(3)">Opción 4</div>
+                    </div>
+                </div>
+                <div class="btn" id="volverAlInicio" onclick="volverAlInicio()">Volver al Inicio </div>
+            </section>
+        </section>
+
+        <section id="pantallaFinal">
+            <div>
+                <h1>Gracias por Jugar!</h1>
+            </div>
+        </section>
 
 
     </div>
-
-
-
-
-
-
-
-
-    <script src="ejecutarNivel.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,13 +1,5 @@
 
 
-COMBINACION PARA PODER ACCEDER A LA CONSOLA ES: 
-
--INGRESAR EL NOMBRE DE jugador
-- INGRESAR EN MAYUSCULAS LAS SIGUIENTE CONVINACION:
-
-// B C C B A B - C 
-
-
 
 
 El simulador es un juego de preguntas y respuestas que suma 1 punto por cada respuesta correcta. 
@@ -21,10 +13,7 @@ y poder ejecutar dicho nivel con sus respectivas preguntas en funcion de los pun
 
 - Aumentar el numero de opciones de respuesta a medida que sube el index del array de niveles.
 
-- agregar una pantalla de bienvenida con un boton para comenzar el juego. 
-y una pantalla de felicitación cuando el jugador sube de nivel.
-
-- mostrar las opciones separadas en cada boton, y cuando el usuario haga click el simulador verifique la respuesta.
+-una pantalla de felicitación cuando el jugador sube de nivel.
 
 
 

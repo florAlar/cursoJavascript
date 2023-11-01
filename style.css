@@ -1,49 +1,285 @@
-body{
-    margin: 0px;
-    padding: 0px;
-    background-color: #f7f7f7;
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&family=Estonia&family=Fredericka+the+Great&family=Lato:wght@400;700&family=Montserrat:wght@300;400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500&family=Roboto:wght@400;500&family=Rubik+Dirt&family=Share+Tech&family=Titillium+Web:wght@600&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Antonio';
+    color: aliceblue;
 }
 
-.barraDeEstado{
-    background-color: #ffffff;
+h1 {
+    color: white;
+    z-index: 20;
+}
+
+
+
+/* FONDO */
+body {
+    min-height: 100vh;
+    /* background: #0a0a0a; */
+    background: url('https://images.unsplash.com/photo-1633218388467-539651dcf81f?auto=format&fit=crop&q=80&w=1332&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    /* opacity: 50%;  */
+}
+
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.burbujas {
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: space-around;
+    width: 100vw;
+    opacity: 0.5;
 }
 
-.icon{
-    height: 36px;
-    width: 36px;
+.burbujas span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: violet;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px darkviolet,
+        0 0 50px magenta,
+        0 0 100px magenta;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
 }
 
-.puntosObtenidosPorJugador{
+.burbujas span:nth-child(even) {
+    background: #4fc3dc;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+        0 0 50px #4fc3dc,
+        0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+
+
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1);
+
+    }
+
+}
+
+
+
+/* pantalla de bienvenida */
+
+.pantallaDeBienvenida2{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding:15px;
+    justify-content: center;
+    height: 99vh;
+    gap: 5%;
 }
 
-.game{
+.logoBienvenida{
+    height: 45%;
+}
+.pantallaDeBienvenida2 input {
+    width: 150%;
+    height: 50px;
+    color: white;
+    background-color: #0002006c ;
+    border: 1px solid white;
+    border-radius: 25px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.pantallaDeBienvenida2 div{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.opciones{
+.label{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.pantallaDeBienvenida2 input:active{
+    background-color: #0002006c;
+    border: 1px solid white;
+    border-radius: 25px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+
+}
+
+
+/* pantalla de juego */
+
+/* BARRA DE ESTADO */
+/* 
+.pantallaJuego{
+    height: 99vh;
+    width: 99vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+} */
+
+.barraDeEstado {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 25px;
+    border: solid 1px rgba(206, 206, 206, 0.404);
+    margin: 0px 20px;
+    padding: 10px;
+    letter-spacing: 2px;
+    background-color: #0002006c;
+}
+
+
+.puntosObtenidos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* JUEGO*/
+
+.pantallaJuego{
+    width: 99vw;
+    height: 99vh; 
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game {
+    width: 99vw;
+    height: 99vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
-.opciones button{
-    margin:1em;
-    background-color: darkslateblue;
-    color: antiquewhite;
-    border: none;
-    padding: 10px 25px;
+.contenedor {
+    border: solid 0.5px rgba(206, 206, 206, 0.404);
     border-radius: 25px;
+    padding: 2%;
+    background-color: #0002006c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
-/* hover? */
+
+.enunciadoPregunta {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* background-color: rgba(0, 0, 0, 0.301); */
+    padding: 20px;
+    text-align: center;
+    color: rgb(206, 206, 206);
+}
+
+.enunciadoRespuestas {
+    width: 100%;
+}
+
+.nombreJugador{
+    text-transform: uppercase;
+}
+
+.btn {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(138, 138, 138);
+    letter-spacing: 3px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 50px;
+    border: solid 1px rgb(206, 206, 206);
+
+    cursor: pointer;
+
+}
+
+.btn:hover {
+    color: rgb(255, 255, 255);
+    border-color: white;
+    transition: all ease-out 200ms;
+    box-shadow: 0 0 5px #ffffff,
+        0 0 10px #ffffff9d,
+        0 0 20px #ffffff62;
+
+}
+
+.blanco{color: rgb(255, 255, 255);
+    border-color: white;
+    transition: all ease-out 200ms;
+    
+
+}
+/* 
+.blanco:hover{
+
+} */
 
 
+ .nombreAcertada{
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(138, 138, 138);
+    letter-spacing: 3px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 50px;
+    color: rgb(74, 238, 74);
+    border-color: 74, 238, 74;
+    transition: all ease-out 200ms;
+    box-shadow: 0 0 5px #41f78c,
+        0 0 10px #41f78c,
+        0 0 20px #41f78c;
 
+}
+
+.nombreNoAcertada{
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(138, 138, 138);
+    letter-spacing: 3px;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 50px;
+    color: rgb(109, 0, 0);
+    border-color: rgb(109, 0, 0);
+    transition: all ease-out 200ms;
+    box-shadow: 0 0 5px #c70d0d,
+        0 0 10px #c70d0d,
+        0 0 20px #c70d0d;
+
+}
