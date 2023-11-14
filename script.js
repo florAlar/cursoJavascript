@@ -1,99 +1,181 @@
-
 const jugador = {
     nombre: "",
     puntos: 0,
-};
+    categoriaActual: "",
+    puntosTotales: 0,
+    categoriasJugadas: {
 
-
-
-
-const preguntasCategoria1 = [
-
-    {
-        enunciado: "¿Quién pintó el famoso cuadro 'La Noche Estrellada'?",
-        opciones: ["Salvador Dalí ", "Diego Velázquez ", "Leonardo Da Vinci", "Vincent Van Gogh"],
-        respuestaCorrecta: "Vincent Van Gogh",
+        historia: false,
+        ciencia: false,
+        vehiculos: false,
+        arte: false,
+        deportes: false,
+        geografia: false,
     },
+}
 
-    {
-        enunciado: "¿Quién escribió 'El origen de las especies'?",
-        opciones: ["Isaac Newton", "Charles Darwin", "Albert Einstein", "Galileo Galilei"],
-        respuestaCorrecta: "Charles Darwin",
-    },
+let preguntas = [];
+let preguntaActualIndex = 0;
 
-    {
-        enunciado: "¿Quién fue el líder de la Revolución Rusa de 1917?",
-        opciones: ["Vladimir Putin", "Joseph Stalin", "León Trotsky", "Vladimir Lenin"],
-        respuestaCorrecta: "Vladimir Lenin",
-    },
+let toastBox = document.querySelector('#toastBox');
 
-    {
-        enunciado: '¿En qué año se produjo la revolución francesa?',
-        opciones: ["1776", "1789", "1799", "1812"],
-        respuestaCorrecta: "1789",
-    },
+function mostrarToast(mensaje) {
+    let toast = document.createElement('div');
+    toast.classList.add('tostadita');
+    toast.innerHTML = mensaje;
+    toastBox.appendChild(toast)
 
-    {
-        enunciado: "¿Cuál de los siguientes líderes no estuvo involucrado en la Segunda Guerra Mundial?",
-        opciones: ["Winston Churchill", "Adolf Hitler", "Frankling Roosevelt", "Napoleon Bonaparte"],
-        respuestaCorrecta: "Napoleon Bonaparte",
-    },
+    setTimeout(() => {
+        toast.remove();
+    }, 3000)
+}
 
-    {
-        enunciado: "¿Qué imperio fue gobernado por Julio César?",
-        opciones: ["Imperio Persa", "Imperio Griego", "Imperio Romano", "Imperio Mongol"],
-        respuestaCorrecta: "Imperio Romano",
-    },
+//chequea si una categoria hasido jugada y modifica a true el valor boolean del objeto categoriasJugadas;
+function chequearCategorias(jugador) {
+    for (const categoria in jugador.categoriasJugadas) {
+        if (jugador.categoriasJugadas[categoria]) {
+            console.log("lee" + jugador.categoriasJugadas[categoria])
+            document.querySelector("#cat-" + categoria).classList.add("categoriaGanada");
+            document.querySelector("#cat-" + categoria).classList.add("insigniaCategoria");
+        }
+        else {
+            console.log("nolee" + jugador.categoriasJugadas[categoria])
+        }
+    }
+    if (todasCategoriasJugadas()) {
+        // Todas las categorías están jugadas, mostrar la pantalla final del juego
+        mostrarPantallaFinal();
+    }
+}
 
-    {
-        enunciado: "¿Cuál es la unidad básica de la herencia y la genética?",
-        opciones: ["átomo", "gen", "Molécula", "celula"],
-        respuestaCorrecta: "gen",
-    },
+//chequea si se jugaron todas las categorias. 
+function todasCategoriasJugadas() {
+    for (const categoria in jugador.categoriasJugadas) {
+        if (!jugador.categoriasJugadas[categoria]) {
+            return false;
+        }
+    }
+    return true;
+}
 
-    {
-        enunciado: "¿Cuál es la fuerza que atrae a todos los objetos hacia la Tierra?",
-        opciones: ["Magnetismo", "Gravedad", "Electricidad", "Fricción"],
-        respuestaCorrecta: "Gravedad",
-    },
+function mostrarPantallaInicial() {
+    
+    document.getElementById("pantallaJuego").style.display = "none";
+    document.getElementById("pantallaFinal").style.display = "none";
+    document.getElementById("pantallaFinalCategoria").style.display = "none";
 
-    {
-        enunciado: "¿Cuál es el proceso por el cual los seres vivos se desarrollan a partir de una sola célula?",
-        opciones: ["Mitosis", "Meiosis", "fecundación", "Celula Madre"],
-        respuestaCorrecta: "Celula Madre",
-    },
+    chequearCategorias(jugador);
+}
 
 
-];
+mostrarPantallaInicial();
 
-let indiceArrayPreguntas = 0;
 
-let cantidadDeRespuestasAcertadas = 0;
+function seleccionarCategoria(categoria) {
 
-document.getElementById("pantallaJuego").style.display = "none";
-document.getElementById("pantallaFinal").style.display = "none";
+    if (jugador.categoriasJugadas[categoria] == true) {
+        console.log(`Ya jugaste la categoría ${categoria}.`);
+        mostrarToast(`Ya jugaste la categoría ${categoria}.`)
 
-document.querySelector("#puntosObtenidos").textContent = cantidadDeRespuestasAcertadas
+        return;
+    }
 
-function capturarNombreJugador() {
+    jugador.categoriaActual = categoria;
+    // Muestra en pantalla la categoría seleccionada por el jugador.
+    document.querySelector("#categoria").textContent = categoria;
+
+    // Llama a cargarPreguntas solo si la categoría no ha sido jugada.
+    cargarPreguntas(categoria);
+    mostrarPantallaJuego();
+}
+
+
+function mostrarPantallaJuego() {
+    //tomo el nombre ingresado por el usuario en el input y lo muestro en la pantalla de juego;
     let contenidoInput = document.querySelector("#nombreIngresadoJugador");
-
     document.querySelector(".nombreJugador").textContent = contenidoInput.value;
+    jugador.nombre = contenidoInput.value;
+
+    //muestro la pantalla de juego y oculto las demas;
+    document.querySelector('#pantallaJuego').style.display = 'block';
+    document.querySelector('#pantallaInicial').style.display = 'none';
+    document.querySelector('#finalCategoria').style.display = 'none';
+    document.querySelector('#pantallaFinal').style.display = 'none';
+
+
+}
+
+function mostrarPantallaFinalCategoria(categoria) {
+    document.querySelector('#pantallaJuego').style.display = 'none';
+    document.querySelector('#pantallaInicial').style.display = 'none';
+    document.querySelector('#finalCategoria').style.display = 'block';
+    document.querySelector('#pantallaFinal').style.display = 'none';
+
+    //asigna categoria ganada al objeto categoriasJugadas.
+    jugador.categoriasJugadas[jugador.categoriaActual] = true;
+    console.log(jugador);   
+    jugador.puntosTotales= jugador.puntos;
+    document.querySelector('#puntuacionActual').textContent = jugador.puntos;
+
+}
+
+function mostrarPantallaFinal() {
+    document.querySelector('#pantallaJuego').style.display = 'none';
+    document.querySelector('#pantallaInicial').style.display = 'none';
+    document.querySelector('#finalCategoria').style.display = 'none';
+    document.querySelector('#pantallaFinal').style.display = 'block';
+
+    //muestra los stats del jugador
+    document.querySelector('#jugadorPantallaFinal').textContent = jugador.nombre;
+    document.querySelector('#puntuacionTotal').textContent = jugador.puntosTotales;
+    pantallaFinal.style.display = 'flex';
+}
+
+
+function regresarAlInicio() {
+    document.querySelector('#pantallaJuego').style.display = 'none';
+    document.querySelector('#pantallaInicial').style.display = 'block';
+    document.querySelector('#finalCategoria').style.display = 'none';
+    document.querySelector('#pantallaFinal').style.display = 'none';
+    jugador.categoriaActual = '';
+    preguntaActualIndex = 0;
+    chequearCategorias(jugador);
 
 }
 
 
 
+async function cargarPreguntas(categoria) {
+    try {
+        const response = await fetch('./preguntas.json');
+        if (!response.ok) {
+            throw new Error("No se pueden cargar las preguntas");
+        }
+
+        const data = await response.json();
+
+        if (data.categorias && data.categorias[categoria]) {
+            preguntas = data.categorias[categoria];
+            console.log(preguntas);
+            mostrarSiguientePregunta();
+        } else {
+            throw new Error(`No se encontraron preguntas para la categoría '${categoria}'`);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 
 function limpiarOpciones() {
-    document.getElementById("opcion0").classList.remove("nombreAcertada");
-    document.getElementById("opcion1").classList.remove("nombreAcertada");
-    document.getElementById("opcion2").classList.remove("nombreAcertada");
-    document.getElementById("opcion3").classList.remove("nombreAcertada");
-    document.getElementById("opcion0").classList.remove("nombreNoAcertada");
-    document.getElementById("opcion1").classList.remove("nombreNoAcertada");
-    document.getElementById("opcion2").classList.remove("nombreNoAcertada");
-    document.getElementById("opcion3").classList.remove("nombreNoAcertada");
+    document.getElementById("opcion0").classList.remove("opcionAcertada");
+    document.getElementById("opcion1").classList.remove("opcionAcertada");
+    document.getElementById("opcion2").classList.remove("opcionAcertada");
+    document.getElementById("opcion3").classList.remove("opcionAcertada");
+    document.getElementById("opcion0").classList.remove("opcionNoAcertada");
+    document.getElementById("opcion1").classList.remove("opcionNoAcertada");
+    document.getElementById("opcion2").classList.remove("opcionNoAcertada");
+    document.getElementById("opcion3").classList.remove("opcionNoAcertada");
     document.getElementById("opcion0").classList.add("btn");
     document.getElementById("opcion1").classList.add("btn");
     document.getElementById("opcion2").classList.add("btn");
@@ -103,102 +185,82 @@ function limpiarOpciones() {
 
 
 
-function mostrarPregunta(indiceArrayPreguntas) {
-    if (preguntasCategoria1.length <= indiceArrayPreguntas) {
-        terminarJuego();
-    } else {
+function iniciarJuego() {
+   
+        let contenidoInput = document.querySelector("#nombreIngresadoJugador");
+        jugador.nombre = contenidoInput.value; // Corregir aquí
+        document.querySelector(".nombreJugador").textContent = jugador.nombre;
+        mostrarPantallaJuego();
+        mostrarSiguientePregunta();
+    }
+
+
+
+
+function mostrarSiguientePregunta() {
+    if (preguntaActualIndex < preguntas.length) {
+        let preguntaActual = preguntas[preguntaActualIndex];
+        // Muestra la pregunta en la pantalla y configura los botones de respuesta
+
+        //tomar los elementos del document:
         limpiarOpciones();
-        let preguntaActual = preguntasCategoria1[indiceArrayPreguntas].enunciado;
-        let elementoPregunta = document.querySelector("#pregunta");
-
-        elementoPregunta.textContent = preguntaActual;
-
+        let elementoPregunta = document.querySelector('#pregunta');
         let elementoOpcion0 = document.querySelector("#opcion0");
         let elementoOpcion1 = document.querySelector("#opcion1");
         let elementoOpcion2 = document.querySelector("#opcion2");
         let elementoOpcion3 = document.querySelector("#opcion3");
 
+        //reemplazar por los elementos del array:
+        elementoPregunta.textContent = preguntaActual.enunciado;
+        elementoOpcion0.textContent = preguntaActual.opciones[0];
+        elementoOpcion1.textContent = preguntaActual.opciones[1];
+        elementoOpcion2.textContent = preguntaActual.opciones[2];
+        elementoOpcion3.textContent = preguntaActual.opciones[3];
 
-        elementoOpcion0.textContent = preguntasCategoria1[indiceArrayPreguntas].opciones[0];
-        elementoOpcion1.textContent = preguntasCategoria1[indiceArrayPreguntas].opciones[1];
-        elementoOpcion2.textContent = preguntasCategoria1[indiceArrayPreguntas].opciones[2];
-        elementoOpcion3.textContent = preguntasCategoria1[indiceArrayPreguntas].opciones[3];
+        preguntaActualIndex++;
+    } else {
+        // Mostrar pantalla de final de categoría
+
+        mostrarPantallaFinalCategoria(jugador.categoriaActual);
+
     }
-
 }
-
-
-
-
-
-function comenzarJuego() {
-
-    preguntaActual = 0;
-    cantidadDeRespuestasAcertadas = 0;
-
-
-    document.getElementById("pantallaFinal").style.display = "none";
-    document.getElementById("pantallaDeBienvenida").style.display = "none";
-
-    document.getElementById("pantallaJuego").style.display = "block";
-    for (const pregunta of preguntasCategoria1) {
-        mostrarPregunta(indiceArrayPreguntas);
-    }
-
-}
-
-//ChequearRespuesta
 
 function chequearRespuesta(eleccion) {
-    let preguntaActual = preguntasCategoria1[indiceArrayPreguntas];
+    let preguntaActual = preguntas[preguntaActualIndex - 1];
+    let opcionSeleccionada = preguntaActual.opciones[eleccion];
 
-    if (preguntaActual.opciones[eleccion] == preguntaActual.respuestaCorrecta) {
-        document.getElementById("opcion" + eleccion).className = "nombreAcertada";
-        cantidadDeRespuestasAcertadas++;
-        document.querySelector("#puntosObtenidos").textContent = cantidadDeRespuestasAcertadas
+    if (opcionSeleccionada == preguntaActual.respuestaCorrecta) {
+        //console.log(preguntaActual.respuestaCorrecta)
+        document.getElementById("opcion" + eleccion).classList.add("opcionAcertada");
+        jugador.puntos++;
+        document.querySelector("#puntosObtenidos").textContent = jugador.puntos;
     } else {
-        document.getElementById("opcion" + eleccion).className = "nombreNoAcertada";
+        document.getElementById("opcion" + eleccion).classList.add("opcionNoAcertada");
     }
-    indiceArrayPreguntas++;
-    setTimeout(() => mostrarPregunta(indiceArrayPreguntas), 1000);
+
+    setTimeout(() => mostrarSiguientePregunta(preguntaActualIndex), 1000);
 }
 
 
+function reiniciarJuego() {
+    jugador.nombre = '';
+    jugador.categoriaActual = '';
+    jugador.puntos = 0;
+    jugador.puntosTotales =0;
+    preguntaActualIndex = 0;
+    preguntas = [];
+    jugador.categoriasJugadas = {
+        historia: false,
+        ciencia: false,
+        vehiculos: false,
+        arte: false,
+        deportes: false,
+        geografia: false,
+    },
+    
+    window.location = '/';
 
-
-function volverAlInicio() {
-    document.getElementById("pantallaDeBienvenida").style.display = "block";
-    document.getElementById("pantallaJuego").style.display = "none";
-    document.getElementById("pantallaFinal").style.display = "none";
+    
 }
 
-
-function terminarJuego() {
-
-    document.getElementById("pantallaJuego").style.display = "none";
-    document.getElementById("pantallaFinal").style.display = "block";
-}
-
-
-/*
-
-funciones que necesito
-
-
--comprobar respuesta
-
--cargar preguntas y opciones (falta bucle)
-
-
--comenzar juego
--terminar juego
-
-- limpiar opciones
-
--volver al inicio
-
-
-
-
-
-*/

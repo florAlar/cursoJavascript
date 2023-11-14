@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-family: 'Antonio';
     color: aliceblue;
+    text-transform: uppercase;
 }
 
 h1 {
@@ -19,16 +20,16 @@ h1 {
 
 /* FONDO */
 body {
-    min-height: 100vh;
-    /* background: #0a0a0a; */
+    min-height: 99vh;
+
     background: url('https://images.unsplash.com/photo-1633218388467-539651dcf81f?auto=format&fit=crop&q=80&w=1332&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    /* opacity: 50%;  */
+
 }
 
 .background {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 99vh;
     overflow: hidden;
 }
 
@@ -83,7 +84,7 @@ body {
 
 /* pantalla de bienvenida */
 
-.pantallaDeBienvenida2{
+.pantallaDeBienvenida2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,36 +93,44 @@ body {
     gap: 5%;
 }
 
-.logoBienvenida{
-    height: 45%;
+.logoBienvenida {
+    height: 30%;
 }
-.pantallaDeBienvenida2 input {
-    width: 150%;
+
+.pantallaDeBienvenida2 div input {
+    min-width: 60%;
     height: 50px;
     color: white;
-    background-color: #0002006c ;
+    background-color: #0002006c;
     border: 1px solid white;
     border-radius: 25px;
     font-size: 30px;
     text-align: center;
     margin-bottom: 30px;
     text-transform: uppercase;
+    width: 90%;
+
+
 }
 
-.pantallaDeBienvenida2 div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.pantallaDeBienvenida2 input:active {
+    background-color: #0002006c;
+    color: white;
+
 }
 
-.label{
+.pantallaDeBienvenida2 .divInput {
+    text-align: center;
+    width:60%;
+}
+
+.label {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 20px;
 }
 
-.pantallaDeBienvenida2 input:active{
+.pantallaDeBienvenida2 input:active {
     background-color: #0002006c;
     border: 1px solid white;
     border-radius: 25px;
@@ -129,22 +138,45 @@ body {
     text-align: center;
     color: white;
 
+
 }
 
+/* pantalla Categorias */
+.inline {
+    display: flex;
+
+}
+
+.pantallaCategorias {
+    /* height: 99%; */
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcionesBotonCategorias {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Organizar en 3 columnas */
+    gap: 20px;
+    /* Espacio entre las tarjetas */
+    padding: 20px;
+    text-align: center;
+
+}
+
+.tarjCategoria {
+    width: 25vw;
+    height: 10vh;
+    padding: 15px;
+}
 
 /* pantalla de juego */
 
 /* BARRA DE ESTADO */
-/* 
-.pantallaJuego{
-    height: 99vh;
-    width: 99vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-} */
+
 
 .barraDeEstado {
     display: flex;
@@ -167,22 +199,23 @@ body {
 
 /* JUEGO*/
 
-.pantallaJuego{
+.pantallaJuego {
     width: 99vw;
-    height: 99vh; 
+    height: 99vh;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .game {
     width: 99vw;
-    height: 99vh; 
+    height: 99vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .contenedor {
@@ -193,7 +226,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
 
@@ -210,7 +243,7 @@ body {
     width: 100%;
 }
 
-.nombreJugador{
+.nombreJugador {
     text-transform: uppercase;
 }
 
@@ -223,34 +256,39 @@ body {
     padding: 15px;
     border-radius: 50px;
     border: solid 1px rgb(206, 206, 206);
-
+    display: flex;
     cursor: pointer;
-
+    align-items: center;
+    justify-content: center;
 }
 
-.btn:hover {
+/* este boton no deja que se carguen las clases ganadoras o perderoras cuando el mouse esta en el contenedor
+/* .btn:hover {
     color: rgb(255, 255, 255);
     border-color: white;
     transition: all ease-out 200ms;
     box-shadow: 0 0 5px #ffffff,
         0 0 10px #ffffff9d,
         0 0 20px #ffffff62;
+        z-index:0;
 
-}
+} */
 
-.blanco{color: rgb(255, 255, 255);
+.blanco {
+    color: rgb(255, 255, 255);
     border-color: white;
     transition: all ease-out 200ms;
-    
+
 
 }
+
 /* 
 .blanco:hover{
 
 } */
 
 
- .nombreAcertada{
+.opcionAcertada {
     text-align: center;
     text-transform: uppercase;
     color: rgb(138, 138, 138);
@@ -264,10 +302,10 @@ body {
     box-shadow: 0 0 5px #41f78c,
         0 0 10px #41f78c,
         0 0 20px #41f78c;
-
+    z-index: 10;
 }
 
-.nombreNoAcertada{
+.opcionNoAcertada {
     text-align: center;
     text-transform: uppercase;
     color: rgb(138, 138, 138);
@@ -281,5 +319,185 @@ body {
     box-shadow: 0 0 5px #c70d0d,
         0 0 10px #c70d0d,
         0 0 20px #c70d0d;
+    z-index: 10;
+}
+
+/*cambiar estilo de clase*/
+
+
+.categoriaGanada {
+    padding: 15px;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 50px;
+    border: none;
+    position: relative;
+    background: #090411;
+    transition: 0.1s;
+}
+
+.categoriaGanada::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, #7d2ae8 17.8%, #535EFC 50%);
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#toastBox {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: auto;
+    padding: 20px;
+}
+
+.tostadita {
+    width: 100%;
+    height: 60px;
+    background-color: #09041177;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border: 0.5px solid white;
+    border-radius: 50px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+
+
+
+}
+
+i {
+    margin: 10px;
+    font-size: 20px;
+}
+
+/* pantalla Final */
+
+.pantallaFinal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 99%;
+}
+
+.pantallaFinal .finalJuego ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.pantallaFinal .finalJuego ul li {
+    list-style: none;
+    color: transparent;
+    font-size: 3em;
+    letter-spacing: 15px;
+    animation: final 1.4s linear infinite;
+}
+
+@keyframes final {
+    0% {
+        color:transparent;
+        text-shadow: none;
+    }
+
+    90% {
+        color: rgb(93, 24, 110);
+        text-shadow: none;
+
+    }
+
+  
+}
+
+.pantallaFinal .finalJuego ul li:nth-child(1){
+    animation-delay: .2s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(2){
+    animation-delay: .4s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(3){
+    animation-delay: .6s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(4){
+    animation-delay: .8s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(5){
+    animation-delay: 1s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(6){
+    animation-delay: 1.2s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(7){
+    animation-delay: 1.4s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(8){
+    animation-delay: 1.6s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(9){
+    animation-delay: 1.8s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(10){
+    animation-delay: 2s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(11){
+    animation-delay: 2.2s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(12){
+    animation-delay: 2.4s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(13){
+    animation-delay: 2.6s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(14){
+    animation-delay: 2.8s;
+}
+.pantallaFinal .finalJuego ul li:nth-child(15){
+    animation-delay: 3s;
+}
+.pantallaFinal .finalJuego span{
+    color:#535EFC;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+.pantallaFinal .finalJuego h2{
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.finalCategoria .pantallaFinalCategoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 99vh ;
+    gap: 30px;
+    letter-spacing: 3px;
+}
+
+.felicitacion{
+    font-size: 2.5em;
+    color:#535EFC;
+}
+
+.puntuacionActual{
+    color:#535EFC;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
 
 }

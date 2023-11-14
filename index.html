@@ -7,6 +7,10 @@
     <title>Document</title>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -37,24 +41,52 @@
             <span style="--i:26"></span>
 
         </div>
-        </section>
+
 
 
         <!-- Pantalla de bienvenida -->
-        <section class="pantallaDeBienvenida" id="pantallaDeBienvenida">
+
+        <section class="pantallaDeBienvenida" id="pantallaInicial">
             <div class="pantallaDeBienvenida2">
-                <img class="logoBienvenida" src="assets/img/logoBienvenida.png" alt="">
-                <div>
-                    <label class="label"> Ingrese Su nombre </label>
+                <img class="logoBienvenida" src="assets/logoBienvenida.png" alt="">
+                <div class="divInput">
+                    <p class="label"> Ingresá tu nombre </p>
                     <input type="text" name="nombreJugador" id="nombreIngresadoJugador">
-                    <div class="btn blanco" id="comenzarJuego" onclick=" capturarNombreJugador(); comenzarJuego(); ">
-                        Comenzar a
-                        Jugar</div>
+
                 </div>
+                <div id="categorias" class="opcionesBotonCategorias">
+                    <div class="btn tarjCategoria" id="cat-historia" onclick="seleccionarCategoria('historia')">
+                        <i class="fa-solid fa-book-bookmark" style="color: #ffffff;"></i>
+                        Historia
+                    </div>
+                    <div class="btn tarjCategoria" id="cat-ciencia" onclick="seleccionarCategoria('ciencia')">
+                        <i class="fa-solid fa-flask-vial" style="color: #ffffff;"></i>
+                        Ciencia
+                    </div>
+                    <div class="btn tarjCategoria" id="cat-vehiculos" onclick="seleccionarCategoria('vehiculos')">
+                        <i class="fa-solid fa-motorcycle" style="color: #ffffff;"></i>
+                        Vehículos
+                    </div>
+
+                    <div class="btn tarjCategoria" id="cat-arte" onclick="seleccionarCategoria('arte')">
+                        <i class="fa-solid fa-paintbrush" style="color: #ffffff;"></i>
+                        Arte
+                    </div>
+                    <div class="btn tarjCategoria" id="cat-deportes" onclick="seleccionarCategoria('deportes')">
+                        <i class="fa-solid fa-basketball" style="color: #ffffff;"></i>
+                        Deportes
+                    </div>
+
+                    <div class="btn tarjCategoria" id="cat-geografia" onclick="seleccionarCategoria('geografia')">
+                        <i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>
+                        Geografía
+                    </div>
+
+                </div>
+                <div id="toastBox"></div>
+
             </div>
-
         </section>
-
         <!-- pantalla de juego -->
         <section class="pantallaJuego" id="pantallaJuego">
 
@@ -63,10 +95,10 @@
                     <h3 class="nombreJugador" id="nombreJugador">Nombre de jugador</h3>
                 </div>
                 <div>
-                    <h3> Categoria </h3>
+                    <h3 id="categoria"> Categoria </h3>
                 </div>
                 <div class="puntosObtenidos">
-                    <img src="assets/img/rec.png" alt="icono estrella">
+                    <img src="assets/icons/rec.png" alt="icono estrella">
                     <h3 id="puntosObtenidos">0</h3>
                 </div>
             </section>
@@ -83,18 +115,64 @@
                         <div class="btn" id="opcion3" onclick="chequearRespuesta(3)">Opción 4</div>
                     </div>
                 </div>
-                <div class="btn" id="volverAlInicio" onclick="volverAlInicio()">Volver al Inicio </div>
+                <div class="inline">
+                    <!-- este boton existe por si me hace sacar el setTimeOut -->
+                    <div class="btn" id="mostrarSiguientePregunta" onclick="mostrarSiguientePregunta()">Siguiente
+                        Pregunta</div>
+                    <div class="btn" id="volverAlInicio" onclick="regresarAlInicio()">Volver al Inicio </div>
+                </div>
             </section>
         </section>
-
-        <section id="pantallaFinal">
-            <div>
-                <h1>Gracias por Jugar!</h1>
+        <!-- Pantalla Final Categoria-->
+        <section class="finalCategoria" id="finalCategoria" style="display: none;">
+            <div class="pantallaFinalCategoria">
+                <h2 class="felicitacion">Terminaste esta Categoría</h2>
+                <h2> Tu Puntuación hasta el momento es: <span class="puntuacionActual" id="puntuacionActual">aca va el puntaje</span></h2>
+                <div class="btn" id="volverAlInicio" onclick="regresarAlInicio()">Volver al Inicio </div>
             </div>
         </section>
 
+        <!-- Pantalla Final -->
+        <section class="pantallaFinal" id="pantallaFinal">
+            <div class="finalJuego" id="finalJuego">
+                <h1>
+
+                    <ul>
+                        <li>J</li>
+                        <li>U</li>
+                        <li>E</li>
+                        <li>G</li>
+                        <li>O</li>
+                        <li> </li>
+                        <li>T</li>
+                        <li>E</li>
+                        <li>R</li>
+                        <li>M</li>
+                        <li>I</li>
+                        <li>N</li>
+                        <li>A</li>
+                        <li>D</li>
+                        <li>0</li>
+                    </ul>
+                    <br>
+                </h1>
+
+                <h2>¡Felicidades <span id="jugadorPantallaFinal">Nombre</span> , has completado todas las categorías!
+                </h2>
+                <h2>Puntuación total: <span id="puntuacionTotal">Puntos</span></h2>
+
+                <div class="btn" onclick="reiniciarJuego()"> Reiniciar Juego </div>
+            </div>
+        </section>
 
     </div>
+    </div>
+
+
+
+
+
+
     <script src="script.js"></script>
 </body>
 

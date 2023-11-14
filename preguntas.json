@@ -1,0 +1,317 @@
+
+{
+  "categorias": {
+    "historia": [
+      {
+        "enunciado": "¿Quién fue el líder de la Revolución Rusa de 1917?",
+        "opciones": ["Vladimir Putin", "Joseph Stalin", "León Trotsky", "Vladimir Lenin"],
+        "respuestaCorrecta": "Vladimir Lenin"
+      },
+      {
+        "enunciado": "¿En qué año se produjo la revolución francesa?",
+        "opciones": ["1776", "1789", "1799", "1812"],
+        "respuestaCorrecta": "1789"
+      },
+      {
+        "enunciado": "¿Qué imperio fue gobernado por Julio César?",
+        "opciones": ["Imperio Persa", "Imperio Griego", "Imperio Romano", "Imperio Mongol"],
+        "respuestaCorrecta": "Imperio Romano"
+      },
+      {
+        "enunciado": "¿Cuál de los siguientes líderes no estuvo involucrado en la Segunda Guerra Mundial?",
+        "opciones": ["Winston Churchill", "Adolf Hitler", "Franklin Roosevelt", "Napoleon Bonaparte"],
+        "respuestaCorrecta": "Napoleon Bonaparte"
+      },
+      {
+        "enunciado": "¿en qué año terminó la segunda guerra mundial?",
+        "opciones": ["1939", "1943", "1945", "1948"],
+        "respuestaCorrecta": "1945"
+      },
+      {
+        "enunciado": "¿Qué evento histórico marcó el final de la Guerra Fría?",
+        "opciones": ["revolucion rusa", "caida del muro de berlín", "crisis de los misiles", "revolucion china"],
+        "respuestaCorrecta": "caida del muro de berlín"
+      },
+      {
+        "enunciado": "¿Quién fue el emperador romano conocido por su persecución a los cristianos?",
+        "opciones": ["augusto", "constantino", "trajano", "neron"],
+        "respuestaCorrecta": "neron"
+      },
+      {
+        "enunciado": "¿Cuál fue la primera civilización en la historia de la humanidad?",
+        "opciones": ["mesopotamica", "egipcia", "sumeria", "china"],
+        "respuestaCorrecta": "sumeria"
+      },
+      {
+        "enunciado": "¿Cuál fue la dinastía china que construyó la Gran Muralla?",
+        "opciones": ["dinastia han", "dinastia zhou", "dinastia ming", "dinastia qin"],
+        "respuestaCorrecta": "dinastia ming"
+      },
+      {
+        "enunciado": "¿Qué evento histórico provocó el inicio de la Primera Guerra Mundial?",
+        "opciones": ["Asesinato del archiduque Franz Ferdinand", "hundimiento del luisitania", "invasion de polonia por parte de alemania", "dia d"],
+        "respuestaCorrecta": "Asesinato del archiduque Franz Ferdinand"
+      }
+    ],
+    "ciencia": [
+      {
+        "enunciado": "¿Cuál es la unidad básica de la herencia y la genética?",
+        "opciones": ["átomo", "gen", "Molécula", "célula"],
+        "respuestaCorrecta": "gen"
+      },
+      {
+        "enunciado": "¿Cuál es la fuerza que atrae a todos los objetos hacia la Tierra?",
+        "opciones": ["Magnetismo", "Gravedad", "Electricidad", "Fricción"],
+        "respuestaCorrecta": "Gravedad"
+      },
+      {
+        "enunciado": "¿Cuál es el órgano más grande del cuerpo humano?",
+        "opciones": ["corazon", "pulmon", "higado", "riñon"],
+        "respuestaCorrecta": "higado"
+      },
+      {
+        "enunciado": "¿Qué parte de la célula es conocida como la 'central de energía'?",
+        "opciones": ["nucleo", "mitocondria", "ribosoma", "lisosoma"],
+        "respuestaCorrecta": "mitocondria"
+      },
+      {
+        "enunciado": "¿Cuál es la función principal de los glóbulos rojos en la sangre?",
+        "opciones": ["coagulacion", "combatir infecciones", "digestion", "transportar oxigeno"],
+        "respuestaCorrecta": "transportar oxigeno"
+      },
+      {
+        "enunciado": "¿Cuál es el pH neutro en la escala de pH?",
+        "opciones": ["0", "7", "10", "14"],
+        "respuestaCorrecta": "7"
+      },
+      {
+        "enunciado": "¿Qué sustancia química es comúnmente conocida como sal de mesa?",
+        "opciones": ["cloruro de sodio", "sulfato de sodio", "carbonato de sodio", "bicarbonato de sodio"],
+        "respuestaCorrecta": "cloruro de sodio"
+      },
+      {
+        "enunciado": "¿Cuál es el planeta más grande del sistema solar?",
+        "opciones": ["marte", "jupiter", "saturno", "neptuno"],
+        "respuestaCorrecta": "jupiter"
+      },
+      {
+        "enunciado": "¿Cuál es el nombre del telescopio espacial lanzado por la NASA en 1990?",
+        "opciones": ["R2D2", "kepler", "galileo", "hubble"],
+        "respuestaCorrecta": "hubble"
+      },
+      {
+        "enunciado": "¿Cuál de las siguientes tecnologías permite la transmisión inalámbrica de datos a corta distancia entre dispositivos?",
+        "opciones": ["NFC", "wi-fi", "bluetooth", "gps"],
+        "respuestaCorrecta": "bluetooth"
+      }
+    ],
+    "arte": [
+      {
+        "enunciado": "¿Quién pintó el famoso cuadro 'La Noche Estrellada'?",
+        "opciones": ["Salvador Dalí", "Diego Velázquez", "Leonardo Da Vinci", "Vincent Van Gogh"],
+        "respuestaCorrecta": "Vincent Van Gogh"
+      },
+      {
+        "enunciado": "¿Qué instrumento tocaba Jimi Hendrix?",
+        "opciones": ["bateria", "guitarra", "bajo", "teclado"],
+        "respuestaCorrecta": "guitarra"
+      },
+      {
+        "enunciado": "¿Quién fue el vocalista de la banda Nirvana?",
+        "opciones": ["Kurt Cobain", "eddie vedder", "cris cornell", "dave grohl"],
+        "respuestaCorrecta": "Kurt Cobain"
+      },
+      {
+        "enunciado": "¿Cuál es el género musical principal de la banda Queen?",
+        "opciones": ["pop", "jazz", "country", "rock"],
+        "respuestaCorrecta": "rock"
+      },
+      {
+        "enunciado": "Cuál de las siguientes bandas es conocida por su álbum 'The Dark Side of the Moon'",
+        "opciones": ["the rolling sones", "red hot chilli peppers", "led zeppelin", "pink floyd"],
+        "respuestaCorrecta": "pink floyd"
+      },
+      {
+        "enunciado": "¿Quién fue el líder de la banda The Doors?",
+        "opciones": ["jhon lennon", "mick jagger", "freddy mercury", "jim morrison"],
+        "respuestaCorrecta": "jim morrison"
+      },
+      {
+        "enunciado": "¿Qué género musical se asocia principalmente con artistas como Muddy Waters y B.B. King??",
+        "opciones": ["jazz", "blues", "country", "hip-hop"],
+        "respuestaCorrecta": "blues"
+      },
+      {
+        "enunciado": "¿Quién es conocido por su pintura 'El Beso'?",
+        "opciones": ["auguste Rodin", "Miguel ängel", "edward klimt", "antonio canova"],
+        "respuestaCorrecta": "edward klimt"
+      },
+      {
+        "enunciado": "¿en qué movimiento artistico podría definirse el trabajo de salvador dalí?",
+        "opciones": ["renacimiento", "surrealismo", "cubismo", "tenebrismo"],
+        "respuestaCorrecta": "surrealismo"
+      },
+      {
+        "enunciado": "¿Quién pintó el famoso cuadro 'el grito'?",
+        "opciones": ["Edward Munch", "pablo picasso", "andre breton", "Mike kelley"],
+        "respuestaCorrecta": "Edward Munch"
+      }
+    ],
+    "vehiculos": [
+        {
+          "enunciado": "¿Cuál de los siguientes fabricantes de automóviles es conocido por sus modelos 'Camry' y 'Corolla'",
+          "opciones": ["Ford", "toyota", "honda", "chevrolet"],
+          "respuestaCorrecta": "toyota"
+        },
+        {
+          "enunciado": "¿Cuál de los siguientes países es conocido por sus vehículos Volvo?",
+          "opciones": ["italia", "suecia", "dinamarca", "alemania"],
+          "respuestaCorrecta": "suecia"
+        },
+        {
+          "enunciado": "Cuál de las siguientes marcas es famosa por sus motocicletas 'Ninja'",
+          "opciones": ["suzuki", "yamaha", "honda", "kawasaki"],
+          "respuestaCorrecta": "kawasaki"
+        },
+        {
+          "enunciado": "Qué marca de automóviles es conocida por su modelo 'Camaro'",
+          "opciones": ["ford", "chevrolet", "dodge", "bmw"],
+          "respuestaCorrecta": "ford"
+        },
+        {
+          "enunciado": "Cuál es la marca de automóviles más antigua que aún está en producción",
+          "opciones": ["ford", "mercedes-benz", "rolls royce", "peugeot"],
+          "respuestaCorrecta": "peugeot"
+        },
+        {
+          "enunciado": "Cuál de las siguientes marcas de automóviles es conocida por su modelo 'Civic'",
+          "opciones": ["toyota", "honda", "nissan", "subaru"],
+          "respuestaCorrecta": "honda"
+        },
+        {
+          "enunciado": "Qué marca de automóviles es conocida por su modelo 'Mustang'",
+          "opciones": ["ford", "chevrolet", "dodge", "toyota"],
+          "respuestaCorrecta": "ford"
+        },
+        {
+          "enunciado": "Qué famosa marca de motocicletas utiliza el lema 'American by Birth. Rebel by Choice.'",
+          "opciones": ["yamaha", "ducati", "indian motorcycles", "harley davidson"],
+          "respuestaCorrecta": "harley davidson"
+        },
+        {
+          "enunciado": "¿Cuál de los siguientes fabricantes de automóviles es originario de Italia?",
+          "opciones": ["Mercedes-Benz", "fiat", "volvo", "hyundai"],
+          "respuestaCorrecta": "fiat"
+        },
+        {
+          "enunciado": "¿Cuál de los siguientes fabricantes es conocido por sus vehículos todoterreno, como el modelo Wrangler?",
+          "opciones": ["land-rover", "ford", "jeep", "toyota"],
+          "respuestaCorrecta": "jeep"
+        }
+      ],
+      "deportes": [
+        {
+          "enunciado": "En qué deporte se utiliza un palo llamado 'putter'",
+          "opciones": ["golf", "cricket", "hockey", "beisbol"],
+          "respuestaCorrecta": "golf"
+        },
+        {
+          "enunciado": "¿Cuál es el equipo de Charles Leclerc en Fórmula 1 en 2023?",
+          "opciones": ["red bull racing", "ferrari", "Mercedes-AMG petronas f1 Team", "mc Laren"],
+          "respuestaCorrecta": "ferrari"
+        },
+        {
+          "enunciado": "Quién es considerado el 'Rey del Tenis'",
+          "opciones": ["Novak Djokovic", "rafael Nadal", "serena williams", "roger federer"],
+          "respuestaCorrecta": "roger federer"
+        },
+        {
+          "enunciado": "Qué país ha ganado más medallas de oro en la historia de los Juegos Olímpicos de Verano",
+          "opciones": ["estados unidos", "china", "rusia", "alemania"],
+          "respuestaCorrecta": "estados unidos"
+        },
+        {
+          "enunciado": "Cuál es el deporte nacional de Japón",
+          "opciones": ["karate", "judo", "sumo", "kendo"],
+          "respuestaCorrecta": "sumo"
+        },
+        {
+          "enunciado": "En qué deporte se utiliza la palabra 'smash'",
+          "opciones": ["tenis", "basket", "badminton", "voleiball"],
+          "respuestaCorrecta": "tenis"
+        },
+        {
+          "enunciado": "Cuántos jugadores hay en un equipo de fútbol durante un partido",
+          "opciones": ["8", "10", "11", "12"],
+          "respuestaCorrecta": "11"
+        },
+        {
+          "enunciado": "¿Cuál es el apodo de Valentino Rossi en el mundo del MotoGP?",
+          "opciones": ["the flash", "el diablo", "il dottore", "rulitos"],
+          "respuestaCorrecta": "il dottore"
+        },
+        {
+          "enunciado": "¿En qué país se encuentra el Circuito de Jerez, donde se celebra el Gran Premio de España de MotoGP?",
+          "opciones": ["italia", "españa", "francia", "dinamarca"],
+          "respuestaCorrecta": "españa"
+        },
+        {
+          "enunciado": "Cuál es el país de origen del club de fútbol FC Barcelona",
+          "opciones": ["italia", "argentina", "brasil", "españa"],
+          "respuestaCorrecta": "españa"
+        }
+      ],
+      "geografia": [
+        {
+          "enunciado": "¿Cuál es el río más largo del planeta?",
+          "opciones": ["nilo", "tamesis", "amazonas", "danubio"],
+          "respuestaCorrecta": "amazonas"
+        },
+        {
+          "enunciado": "¿Cuántos océanos hay en el mundo?",
+          "opciones": ["4", "5", "3", "7"],
+          "respuestaCorrecta": "5"
+        },
+        {
+          "enunciado": "¿Cuál es la cadena montañosa más larga del mundo?",
+          "opciones": ["los andes", "montañas rocosas", "cordillera artica", "kunlun"],
+          "respuestaCorrecta": "los andes"
+        },
+        {
+          "enunciado": "¿En qué país se encuentra el Taj Mahal?",
+          "opciones": ["india", "Arabia saudi", "paskistan", "afganistan"],
+          "respuestaCorrecta": "india"
+        },
+        {
+          "enunciado": "¿Qué país se conoce como 'la tierra del sol naciente'?",
+          "opciones": ["china", "japon", "tibet", "nepal"],
+          "respuestaCorrecta": "japon"
+        },
+        {
+          "enunciado": "¿Cuál es la capital de Canadá?",
+          "opciones": ["liubliana", "budapest", "ottawa", "toronto"],
+          "respuestaCorrecta": "ottawa"
+        },
+        {
+          "enunciado": "¿Cuál es el país más pequeño del mundo?",
+          "opciones": ["el vaticano", "monaco", "letonia", "estonia"],
+          "respuestaCorrecta": "el vaticano"
+        },
+        {
+          "enunciado": "¿En qué país se encuentra Machu Picchu?",
+          "opciones": ["chile", "bolivia", "peru", "el salvador"],
+          "respuestaCorrecta": "peru"
+        },
+        {
+          "enunciado": "¿Cuál es el país más grande de América del Sur?",
+          "opciones": ["argentina", "brasil", "bolivia", "chile"],
+          "respuestaCorrecta": "brasil"
+        },
+        {
+          "enunciado": "¿Cuál es el océano más grande del mundo?",
+          "opciones": ["pacifico", "indico", "atlantico", "antartico"],
+          "respuestaCorrecta": "pacifico"
+        }
+      ]
+  }
+}
