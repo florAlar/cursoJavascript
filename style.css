@@ -21,7 +21,6 @@ h1 {
 /* FONDO */
 body {
     min-height: 99vh;
-
     background: url('https://images.unsplash.com/photo-1633218388467-539651dcf81f?auto=format&fit=crop&q=80&w=1332&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 
 }
@@ -64,9 +63,6 @@ body {
     animation-duration: calc(125s / var(--i));
 }
 
-
-
-
 @keyframes animate {
     0% {
         transform: translateY(100vh) scale(0);
@@ -79,8 +75,6 @@ body {
     }
 
 }
-
-
 
 /* pantalla de bienvenida */
 
@@ -109,19 +103,16 @@ body {
     margin-bottom: 30px;
     text-transform: uppercase;
     width: 90%;
-
-
 }
 
 .pantallaDeBienvenida2 input:active {
     background-color: #0002006c;
     color: white;
-
 }
 
 .pantallaDeBienvenida2 .divInput {
     text-align: center;
-    width:60%;
+    width: 60%;
 }
 
 .label {
@@ -148,7 +139,7 @@ body {
 }
 
 .pantallaCategorias {
-    /* height: 99%; */
+
     padding: 5%;
     display: flex;
     align-items: center;
@@ -159,9 +150,9 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Organizar en 3 columnas */
+
     gap: 20px;
-    /* Espacio entre las tarjetas */
+
     padding: 20px;
     text-align: center;
 
@@ -233,7 +224,7 @@ body {
 .enunciadoPregunta {
     text-transform: uppercase;
     letter-spacing: 2px;
-    /* background-color: rgba(0, 0, 0, 0.301); */
+
     padding: 20px;
     text-align: center;
     color: rgb(206, 206, 206);
@@ -261,31 +252,12 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-/* este boton no deja que se carguen las clases ganadoras o perderoras cuando el mouse esta en el contenedor
-/* .btn:hover {
-    color: rgb(255, 255, 255);
-    border-color: white;
-    transition: all ease-out 200ms;
-    box-shadow: 0 0 5px #ffffff,
-        0 0 10px #ffffff9d,
-        0 0 20px #ffffff62;
-        z-index:0;
-
-} */
-
 .blanco {
     color: rgb(255, 255, 255);
     border-color: white;
     transition: all ease-out 200ms;
-
-
 }
 
-/* 
-.blanco:hover{
-
-} */
 
 
 .opcionAcertada {
@@ -321,10 +293,6 @@ body {
         0 0 20px #c70d0d;
     z-index: 10;
 }
-
-/*cambiar estilo de clase*/
-
-
 .categoriaGanada {
     padding: 15px;
     color: #fff;
@@ -373,10 +341,6 @@ body {
     text-transform: uppercase;
     display: flex;
     align-items: center;
-
-
-
-
 }
 
 i {
@@ -410,7 +374,7 @@ i {
 
 @keyframes final {
     0% {
-        color:transparent;
+        color: transparent;
         text-shadow: none;
     }
 
@@ -420,82 +384,98 @@ i {
 
     }
 
-  
+
 }
 
-.pantallaFinal .finalJuego ul li:nth-child(1){
+.pantallaFinal .finalJuego ul li:nth-child(1) {
     animation-delay: .2s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(2){
+
+.pantallaFinal .finalJuego ul li:nth-child(2) {
     animation-delay: .4s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(3){
+
+.pantallaFinal .finalJuego ul li:nth-child(3) {
     animation-delay: .6s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(4){
+
+.pantallaFinal .finalJuego ul li:nth-child(4) {
     animation-delay: .8s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(5){
+
+.pantallaFinal .finalJuego ul li:nth-child(5) {
     animation-delay: 1s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(6){
+
+.pantallaFinal .finalJuego ul li:nth-child(6) {
     animation-delay: 1.2s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(7){
+
+.pantallaFinal .finalJuego ul li:nth-child(7) {
     animation-delay: 1.4s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(8){
+
+.pantallaFinal .finalJuego ul li:nth-child(8) {
     animation-delay: 1.6s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(9){
+
+.pantallaFinal .finalJuego ul li:nth-child(9) {
     animation-delay: 1.8s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(10){
+
+.pantallaFinal .finalJuego ul li:nth-child(10) {
     animation-delay: 2s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(11){
+
+.pantallaFinal .finalJuego ul li:nth-child(11) {
     animation-delay: 2.2s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(12){
+
+.pantallaFinal .finalJuego ul li:nth-child(12) {
     animation-delay: 2.4s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(13){
+
+.pantallaFinal .finalJuego ul li:nth-child(13) {
     animation-delay: 2.6s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(14){
+
+.pantallaFinal .finalJuego ul li:nth-child(14) {
     animation-delay: 2.8s;
 }
-.pantallaFinal .finalJuego ul li:nth-child(15){
+
+.pantallaFinal .finalJuego ul li:nth-child(15) {
     animation-delay: 3s;
 }
-.pantallaFinal .finalJuego span{
-    color:#535EFC;
+
+.pantallaFinal .finalJuego span {
+    color: #535EFC;
     text-align: center;
     text-transform: uppercase;
     font-size: 2em;
 }
-.pantallaFinal .finalJuego h2{
+
+.pantallaFinal .finalJuego h2 {
     letter-spacing: 3px;
     text-align: center;
 }
 
-.finalCategoria .pantallaFinalCategoria{
+.finalCategoria .pantallaFinalCategoria {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 99vh ;
+    height: 99vh;
     gap: 30px;
     letter-spacing: 3px;
 }
 
-.felicitacion{
+.felicitacion {
     font-size: 2.5em;
-    color:#535EFC;
+    color: #535EFC;
 }
 
-.puntuacionActual{
-    color:#535EFC;
+.puntuacionActual {
+    color: #535EFC;
     text-align: center;
     text-transform: uppercase;
     font-size: 2em;

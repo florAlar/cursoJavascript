@@ -59,7 +59,7 @@ function todasCategoriasJugadas() {
 }
 
 function mostrarPantallaInicial() {
-    
+
     document.getElementById("pantallaJuego").style.display = "none";
     document.getElementById("pantallaFinal").style.display = "none";
     document.getElementById("pantallaFinalCategoria").style.display = "none";
@@ -75,8 +75,7 @@ function seleccionarCategoria(categoria) {
 
     if (jugador.categoriasJugadas[categoria] == true) {
         console.log(`Ya jugaste la categoría ${categoria}.`);
-        mostrarToast(`Ya jugaste la categoría ${categoria}.`)
-
+        mostrarToast(`Ya jugaste la categoría ${categoria}.`);
         return;
     }
 
@@ -101,8 +100,6 @@ function mostrarPantallaJuego() {
     document.querySelector('#pantallaInicial').style.display = 'none';
     document.querySelector('#finalCategoria').style.display = 'none';
     document.querySelector('#pantallaFinal').style.display = 'none';
-
-
 }
 
 function mostrarPantallaFinalCategoria(categoria) {
@@ -113,10 +110,9 @@ function mostrarPantallaFinalCategoria(categoria) {
 
     //asigna categoria ganada al objeto categoriasJugadas.
     jugador.categoriasJugadas[jugador.categoriaActual] = true;
-    console.log(jugador);   
-    jugador.puntosTotales= jugador.puntos;
+    console.log(jugador);
+    jugador.puntosTotales = jugador.puntos;
     document.querySelector('#puntuacionActual').textContent = jugador.puntos;
-
 }
 
 function mostrarPantallaFinal() {
@@ -140,7 +136,6 @@ function regresarAlInicio() {
     jugador.categoriaActual = '';
     preguntaActualIndex = 0;
     chequearCategorias(jugador);
-
 }
 
 
@@ -180,19 +175,17 @@ function limpiarOpciones() {
     document.getElementById("opcion1").classList.add("btn");
     document.getElementById("opcion2").classList.add("btn");
     document.getElementById("opcion3").classList.add("btn");
-
 }
 
 
 
 function iniciarJuego() {
-   
-        let contenidoInput = document.querySelector("#nombreIngresadoJugador");
-        jugador.nombre = contenidoInput.value; // Corregir aquí
-        document.querySelector(".nombreJugador").textContent = jugador.nombre;
-        mostrarPantallaJuego();
-        mostrarSiguientePregunta();
-    }
+    let contenidoInput = document.querySelector("#nombreIngresadoJugador");
+    jugador.nombre = contenidoInput.value;
+    document.querySelector(".nombreJugador").textContent = jugador.nombre;
+    mostrarPantallaJuego();
+    mostrarSiguientePregunta();
+}
 
 
 
@@ -220,7 +213,6 @@ function mostrarSiguientePregunta() {
         preguntaActualIndex++;
     } else {
         // Mostrar pantalla de final de categoría
-
         mostrarPantallaFinalCategoria(jugador.categoriaActual);
 
     }
@@ -231,7 +223,7 @@ function chequearRespuesta(eleccion) {
     let opcionSeleccionada = preguntaActual.opciones[eleccion];
 
     if (opcionSeleccionada == preguntaActual.respuestaCorrecta) {
-        //console.log(preguntaActual.respuestaCorrecta)
+
         document.getElementById("opcion" + eleccion).classList.add("opcionAcertada");
         jugador.puntos++;
         document.querySelector("#puntosObtenidos").textContent = jugador.puntos;
@@ -247,7 +239,7 @@ function reiniciarJuego() {
     jugador.nombre = '';
     jugador.categoriaActual = '';
     jugador.puntos = 0;
-    jugador.puntosTotales =0;
+    jugador.puntosTotales = 0;
     preguntaActualIndex = 0;
     preguntas = [];
     jugador.categoriasJugadas = {
@@ -258,9 +250,8 @@ function reiniciarJuego() {
         deportes: false,
         geografia: false,
     },
-    
-    window.location = '/';
+        window.location = '/';
 
-    
+
 }
 
